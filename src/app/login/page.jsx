@@ -19,7 +19,7 @@ const LoginPage = () => {
         <button className="btn btn-neutral mt-4">Login</button>
          <h2 className="text-center mt-2">
             Don't have any account?{" "}
-            <Link href={'/register'} className="text-blue-600" href={"/register"}>
+            <Link href={'/register'} className="text-blue-600 hover:text-blue-900">
               Register
             </Link>
           </h2>

@@ -3,8 +3,8 @@ import React from 'react';
 
 const Navbar = () => {
     const links = <>
-          <li><Link href={'/'}>Home</Link></li>
-          <li><Link href={'/courses'}>Courses</Link></li>
+          <li><Link href={'/home'}>Home</Link></li>
+          <li><Link href={'/allcourse'}>Courses</Link></li>
           <li><Link href={'/myprofile'}>My Profile</Link></li>
     </>
     return (
@@ -21,7 +21,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <Link href={'/'} className="btn btn-ghost text-xl font-bold">SkillSphere</Link>
+    <Link href={'/home'} className="btn btn-ghost text-xl font-bold">SkillSphere</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

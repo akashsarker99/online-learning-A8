@@ -25,7 +25,7 @@ const RegisterPage = () => {
           <button className="btn btn-neutral mt-4">Register</button>
           <h2 className="text-center mt-2">
             Have any account?{" "}
-            <Link href={'/register'} className="text-blue-600" >
+            <Link href={'/login'} className="text-blue-600 hover:text-blue-900" >
               Login
             </Link>
           </h2>

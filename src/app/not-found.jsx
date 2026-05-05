@@ -5,7 +5,7 @@ const NotFoundPage = () => {
     return (
         <div className='flex flex-col h-[80vh] items-center justify-center'>
             <h2 className='font-bold pb-3'>This Page is not found</h2>
-            <Link href='/'>
+            <Link href='/home'>
                 <button className='btn'>Back to home</button>
             </Link>
         </div>
