@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import React from 'react';
-import heroImg from '@/assets/freelancer.jpg'
 import { FaArrowRightLong } from 'react-icons/fa6';
-
+import heroImg from '@/assets/heroo.jpg'
+import Image from 'next/image';
+import Link from 'next/link';
 const Hero = () => {
     return (
         <div>
@@ -14,7 +14,7 @@ const Hero = () => {
       <p className="py-6">
        Learn from Industry Experts
       </p>
-      <button className="btn btn-neutral"><span>Explore Courses</span> <FaArrowRightLong /></button>
+      <Link href={'/allcourse'}><button className="btn bg-[#2FA084] text-white"><span>Explore Courses</span> <FaArrowRightLong /></button></Link>
     </div>
   </div>
 </div>

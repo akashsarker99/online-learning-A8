@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
-
+import Navlink from './Navlink';
+import { IoLogInSharp } from "react-icons/io5";
 const Navbar = () => {
     const links = <>
-          <li><Link href={'/home'}>Home</Link></li>
-          <li><Link href={'/allcourse'}>Courses</Link></li>
-          <li><Link href={'/myprofile'}>My Profile</Link></li>
+        <ul className='flex flex-col sm:flex-row gap-4'>
+            <li><Navlink href={'/'}>Home</Navlink></li>
+          <li><Navlink href={'/allcourse'}>Courses</Navlink></li>
+          <li><Navlink href={'/myprofile'}>My Profile</Navlink></li>
+        </ul>
     </>
     return (
         <div>
@@ -21,7 +24,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <Link href={'/home'} className="btn btn-ghost text-xl font-bold">SkillSphere</Link>
+    <Link href={'/'} className="btn btn-ghost text-xl font-bold text-[#2FA084]">SkillSphere</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -29,7 +32,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link href={'/login'} className="btn btn-neutral">Login</Link>
+    <Link href={'/login'} className="btn bg-[#2FA084] text-white"><IoLogInSharp /> Login</Link>
   </div>
 </div>
         </div>
