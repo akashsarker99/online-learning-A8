@@ -4,7 +4,7 @@ import Image from 'next/image';
 const LearningTips = () => {
     return (
        <div>
-        <div className="text-center mb-8 mt-16">
+        <div className="text-center mb-8 ">
         <h2 className="text-3xl font-bold">
           Learning Tips
         </h2>
@@ -15,7 +15,7 @@ const LearningTips = () => {
       </div>
          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5  container mx-auto'>
             {
-                tips.map(tip => <Card key={tip.id} className="gap-2 shadow">
+                tips.map(tip => <Card key={tip.id} className=" text-center shadow border">
 
            <div className='text-3xl'>
             {tip.icon}

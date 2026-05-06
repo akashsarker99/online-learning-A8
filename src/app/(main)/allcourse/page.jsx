@@ -1,4 +1,4 @@
-import PopularCourse from '@/components/PopularCourse';
+import PopularCourse from '@/components/shared/PopularCourse';
 import { getCourses } from '@/lib/getfiles';
 import React from 'react';
 
