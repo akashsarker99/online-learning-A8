@@ -10,9 +10,9 @@ const Instructor = async () => {
         <div className='container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5'>
              {
                 instructors.map(instructor => <div key={instructor.id}>
-                        <div className="card bg-base-100 shadow-md border border-gray-300 h-full">
+                        <div className="card rounded-2xl bg-base-100 shadow-md border border-gray-300 h-full">
               <figure className='overflow-hidden'>
-                  <Image className='rounded-xl' src={instructor.image} height={200} width={300}  alt={instructor.title}></Image>
+                  <Image className='rounded-xl' src={instructor.image} height={200} width={300}  alt={instructor.name}></Image>
               </figure>
               <div className='space-y-2'>
                 <h2 className="text-lg font-bold">{instructor.name}</h2>

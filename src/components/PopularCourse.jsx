@@ -4,10 +4,9 @@ import React from 'react';
 import { FaStar } from 'react-icons/fa';
 
 const PopularCourse = ({course}) => {
-    console.log(course)
     return (
         <div>
-            <div className="card bg-base-100 shadow-md border border-gray-300 h-full">
+            <div className="card bg-base-100 rounded-2xl shadow-md border border-gray-300 h-full">
   <figure className='overflow-hidden'>
       <Image className='rounded-xl' src={course.image} height={300} width={400}  alt={course.title}></Image>
   </figure>

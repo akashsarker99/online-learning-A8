@@ -3,6 +3,7 @@ import PopularCourse from "@/components/PopularCourse";
 import Hero from "@/components/Hero";
 import Link from "next/link";
 import Instructor from "@/components/Instructor";
+import LearningTips from "@/components/LearningTips";
 
 export default async function Home() {
 const courses = await getCourses();
@@ -25,6 +26,10 @@ const courses = await getCourses();
     <div className="mt-12">
       <h1 className="text-center font-bold text-2xl mb-7">Top Instructors</h1>
       <Instructor></Instructor>
+    </div>
+
+    <div>
+        <LearningTips></LearningTips>
     </div>
     </div>
     
