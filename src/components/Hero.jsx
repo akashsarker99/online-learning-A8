@@ -12,7 +12,7 @@ const Hero = () => {
     <div>
       <h1 className="text-5xl font-bold">Upgrade Your Skills Today !</h1>
       <p className="py-6">
-       Learn from Industry Experts
+       Learn from the Industry Experts
       </p>
       <Link href={'/allcourse'}><button className="btn bg-[#2FA084] text-white"><span>Explore Courses</span> <FaArrowRightLong /></button></Link>
     </div>
