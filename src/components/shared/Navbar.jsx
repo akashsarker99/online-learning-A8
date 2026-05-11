@@ -1,13 +1,22 @@
+'use client'
 import Link from 'next/link';
-import React from 'react';
 import Navlink from './Navlink';
-import { IoLogInSharp } from "react-icons/io5";
+import { IoLogInSharp, IoLogOutOutline } from "react-icons/io5";
+import { authClient } from '@/lib/auth-client';
+import userAvatar from '@/assets/user.png'
+import Image from 'next/image';
 const Navbar = () => {
+  const {data: session} = authClient.useSession();
+   const user = session?.user;
+
+   const handleSignOut = async () =>{
+     return await authClient.signOut();
+   }
     const links = <>
         <ul className='flex flex-col sm:flex-row gap-4'>
             <li><Navlink href={'/'}>Home</Navlink></li>
           <li><Navlink href={'/allcourse'}>Courses</Navlink></li>
-          <li><Navlink href={'/myprofile'}>My Profile</Navlink></li>
+          <li><Navlink href={'/profile'}>My Profile</Navlink></li>
         </ul>
     </>
     return (
@@ -31,8 +40,17 @@ const Navbar = () => {
      {links}
     </ul>
   </div>
+  
   <div className="navbar-end">
-    <Link href={'/login'} className="btn bg-[#2FA084] text-white"><IoLogInSharp /> Login</Link>
+     {
+    user? <div className='flex sm:gap-2.5 items-center'>
+          <div className='flex items-center gap-1'> <h1 className='text-xs sm:text-sm'>Hello, {user.name}</h1>
+          <Image src={user.image || userAvatar} alt='userAvatar' width={40} height={40}></Image></div>
+          <button onClick={handleSignOut} className='btn btn-xs sm:btn-sm bg-[#2FA084] text-white'><Link className='flex items-center gap-2.5' href={'/login'}>Logout <IoLogOutOutline /></Link></button>
+        </div> :
+            <Link href={'/login'} className="btn bg-[#2FA084] text-white"><IoLogInSharp /> Login</Link>
+
+  }
   </div>
 </div>
         </div>

@@ -1,9 +1,11 @@
 'use client'
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
    const {
@@ -12,14 +14,26 @@ const LoginPage = () => {
       formState: { errors },
     } = useForm();
 
+    const router = useRouter();
+
     const handleLogin = async (datas) => {
        
          const {data, error} = await authClient.signIn.email({
             email: datas.email,
             password: datas.password,
-            callbackURL: "/"
          })
-          data? alert('Registration Successful') : error? alert(`${error.message}`) :""
+          
+         if (data) {
+              toast.success("Login Successful");
+          
+              setTimeout(() => {
+                router.push("/");
+                 }, 1000);
+                }
+
+        if (error) {
+            toast.error(error.message);
+          }
       };
 
       const [isShow, setIsShow] = useState(false);

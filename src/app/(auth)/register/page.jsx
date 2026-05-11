@@ -1,9 +1,11 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const RegisterPage = () => {
   const {
@@ -11,6 +13,7 @@ const RegisterPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const router = useRouter();
   const handleRegister = async (datas) => {
    
      const {data, error} = await authClient.signUp.email({
@@ -18,9 +21,14 @@ const RegisterPage = () => {
         email: datas.email,
         password: datas.password,
         image: datas.photo,
-        callbackURL: "/"
      })
-      data? alert('Registration Successful') : error? alert(`${error.message}`) :""
+      if(data){
+          toast.success('Registration Successful');
+          setTimeout(() => {
+            router.push("/login");
+          }, 1000);
+      } 
+       error? toast.error(`${error.message}`) :""
   };
 
   const [isShow, setIsShow] = useState(false);
