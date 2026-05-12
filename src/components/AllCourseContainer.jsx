@@ -20,7 +20,7 @@ const AllCourseContainer = ({courses}) => {
       </div>
             <h2 className='text-2xl mt-5 mb-2.5 font-bold text-center'>All Courses</h2>
 
-           <form className='flex justify-center my-8'>
+           <form className='flex justify-center m-8'>
              <label className="input">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g
@@ -39,7 +39,7 @@ const AllCourseContainer = ({courses}) => {
 </label>
 <button onClick={handleSearch} className='btn ml-1.5 bg-[#2FA084] hover:bg-[#148d6f] text-white'>Search</button>
            </form>
-         <div className='grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
+         <div className='grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-5'>
             
             {
                filteredCourses.map(course => <PopularCourse key={course.id} course={course}></PopularCourse>)

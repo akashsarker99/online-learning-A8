@@ -6,7 +6,7 @@ import { FaStar } from 'react-icons/fa';
 const Instructor = async () => {
     const instructors = await getInstructors();
     return (
-        <div className='container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5'>
+        <div className='container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5'>
              {
                 instructors.map(instructor => <div key={instructor.id}>
                         <div className="card rounded-2xl bg-base-100 shadow-md border border-gray-300 h-full">

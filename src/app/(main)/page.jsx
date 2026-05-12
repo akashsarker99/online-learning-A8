@@ -17,7 +17,7 @@ const courses = await getCourses();
        <p className="text-gray-500 mt-2 text-center mb-6">
     Explore our highest-rated courses and learn from industry experts with confidence.
   </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 justify-center lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 justify-center lg:grid-cols-3 gap-4 px-5">
          {
          courses.sort((a,b) => b.rating - a.rating).slice(0,3).map(course => <PopularCourse key={course.id} course={course}></PopularCourse>)
        }
