@@ -1,11 +1,16 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const ProfilePage = () => {
+    const router = useRouter();
     const {data: session} = authClient.useSession();
     const user = session?.user;
+    if(!session){
+          router.push("/login");
+    }
     return (
         <div className='text-center mt-9 container mx-auto'>
             <h1 className='text-2xl font-bold mb-6 underline'>My Profile</h1>

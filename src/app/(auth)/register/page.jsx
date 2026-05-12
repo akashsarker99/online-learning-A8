@@ -25,6 +25,7 @@ const RegisterPage = () => {
      })
       if(data){
           toast.success('Registration Successful');
+          router.refresh();
           setTimeout(() => {
             router.push("/login");
           }, 1000);
