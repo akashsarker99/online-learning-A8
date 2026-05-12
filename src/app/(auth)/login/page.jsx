@@ -46,8 +46,9 @@ const LoginPage = () => {
       const [isShow, setIsShow] = useState(false);
   return (
     <div className="flex justify-center items-center h-[100vh]">
-     <form onSubmit={handleSubmit(handleLogin)}>
-         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+    <div className="bg-base-200 border-base-300 rounded-box border p-4">
+       <form onSubmit={handleSubmit(handleLogin)}>
+         <fieldset className="fieldset bg-base-200 w-xs">
         <h2 className="text-center text-xl font-semibold mb-3">
           Login to your account
         </h2>
@@ -75,11 +76,13 @@ const LoginPage = () => {
               Register
             </Link>
           </h2>
-
-           <h2 className="text-center">OR</h2>
-                       <button onClick={handleGoogleLogin} className=' btn border border-[#2FA084] text-[#2FA084]'><FaGoogle /> Login with Google</button>
+  <h2 className="text-center">OR</h2>
+         
       </fieldset>
      </form>
+     
+         <button onClick={handleGoogleLogin} className=' btn btn-block border border-[#2FA084] text-[#2FA084]'><FaGoogle /> Login with Google</button>
+    </div>
     </div>
   );
 };
