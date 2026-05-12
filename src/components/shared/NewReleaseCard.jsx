@@ -1,11 +1,23 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
-
+import { motion } from "motion/react"
 const NewReleaseCard = ({newCard}) => {
     return (
-        <div >
+        <motion.div  initial={{ opacity: 0, y: 40 }}
+
+  whileInView={{ opacity: 1, y: 0 }}
+
+  whileHover={{
+    y: -10,
+    scale: 1.02,
+  }}
+
+  transition={{
+    duration: 0.4
+  }}>
             <div className="card bg-base-100 shadow-sm border border-gray-300">
   <figure className='h-56 overflow-hidden'>
       <Image className='rounded-xl w-full h-full object-cover' src={newCard.image} height={200} width={400}  alt={newCard.title}></Image>
@@ -25,7 +37,7 @@ const NewReleaseCard = ({newCard}) => {
     </div>
   </div>
 </div>
-        </div>
+        </motion.div>
     );
 };
 

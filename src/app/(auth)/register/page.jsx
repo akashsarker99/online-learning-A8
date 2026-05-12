@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { handleGoogleLogin } from "../login/page";
 
 const RegisterPage = () => {
   const {
@@ -68,7 +69,7 @@ const RegisterPage = () => {
               errors.password && <p className="text-red-500">{errors.password.message}</p>
             }
 
-          <button className="btn bg-[#2FA084] text-white mt-4">Register</button>
+          <button className="btn bg-[#2FA084] text-white mt-4 hover:bg-[#148d6f]">Register</button>
           <h2 className="text-center mt-2">
             Have any account?{" "}
             <Link
@@ -80,7 +81,7 @@ const RegisterPage = () => {
           </h2>
 
           <h2 className="text-center">OR</h2>
-          <button className=" btn border border-[#2FA084] text-[#2FA084]">
+          <button onClick={handleGoogleLogin} className=" btn border border-[#2FA084] text-[#2FA084]">
             <FaGoogle /> Login with Google
           </button>
         </fieldset>

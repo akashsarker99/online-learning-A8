@@ -48,7 +48,7 @@ const Navbar = () => {
           <Image src={user.image || userAvatar} alt='userAvatar' width={40} height={40}></Image></div>
           <button onClick={handleSignOut} className='btn btn-xs sm:btn-sm bg-[#2FA084] text-white'><Link className='flex items-center gap-2.5' href={'/login'}>Logout <IoLogOutOutline /></Link></button>
         </div> :
-            <Link href={'/login'} className="btn bg-[#2FA084] text-white"><IoLogInSharp /> Login</Link>
+            <Link href={'/login'} className="btn bg-[#2FA084] text-white hover:bg-[#148d6f]"><IoLogInSharp /> Login</Link>
 
   }
   </div>

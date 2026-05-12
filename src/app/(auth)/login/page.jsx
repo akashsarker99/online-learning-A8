@@ -7,6 +7,13 @@ import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
 
+export const handleGoogleLogin = async () =>{
+    const data = await authClient.signIn.social({
+    provider: "google",
+  });
+}
+
+
 const LoginPage = () => {
    const {
       register,
@@ -61,7 +68,7 @@ const LoginPage = () => {
             }
 
 
-        <button className="btn bg-[#2FA084] text-white mt-4">Login</button>
+        <button className="btn bg-[#2FA084] text-white mt-4 hover:bg-[#148d6f]">Login</button>
          <h2 className="text-center mt-2">
             Don't have any account?{" "}
             <Link href={'/register'} className="text-[#2FA084] hover:text-green-900">
@@ -70,7 +77,7 @@ const LoginPage = () => {
           </h2>
 
            <h2 className="text-center">OR</h2>
-                       <button  className=' btn border border-[#2FA084] text-[#2FA084]'><FaGoogle /> Login with Google</button>
+                       <button onClick={handleGoogleLogin} className=' btn border border-[#2FA084] text-[#2FA084]'><FaGoogle /> Login with Google</button>
       </fieldset>
      </form>
     </div>

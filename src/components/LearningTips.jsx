@@ -1,6 +1,5 @@
 import {tips} from '@/lib/tips'
 import {Avatar, Card} from "@heroui/react";
-import Image from 'next/image';
 const LearningTips = () => {
     return (
        <div>

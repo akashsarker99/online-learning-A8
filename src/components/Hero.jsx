@@ -1,8 +1,10 @@
+"use client"
 import React from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import heroImg from '@/assets/heroo.jpg'
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from "motion/react"
 const Hero = () => {
     return (
         <div>
@@ -14,7 +16,12 @@ const Hero = () => {
       <p className="py-6">
        Learn from the Industry Experts
       </p>
-      <Link href={'/allcourse'}><button className="btn bg-[#2FA084] text-white"><span>Explore Courses</span> <FaArrowRightLong /></button></Link>
+      <Link href={'/allcourse'}><motion.button
+         whileHover={{ scale: 1.1,
+         transition: { duration: 0.1 }
+  }}
+  transition={{ duration: 0.5 }}
+ className="btn bg-[#2FA084] text-white "><span>Explore Courses</span> <FaArrowRightLong /></motion.button></Link>
     </div>
   </div>
 </div>
