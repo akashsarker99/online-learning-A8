@@ -1,9 +1,12 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const UpdateProfile = () => {
+  const router = useRouter();
       const {
         register,
         handleSubmit,
@@ -11,10 +14,17 @@ const UpdateProfile = () => {
       } = useForm();
 
       const handleUpdate = async (datas)=>{
-     const {data, error} = await authClient.updateUser({
+       try{
+          await authClient.updateUser({
     image: datas.photo,
     name: datas.name,
 })
+toast.success('Profile updated Successfully')
+   router.push('/profile')
+       }
+       catch(error){
+        toast.error(error.message)
+       }
       }
     
     return (
