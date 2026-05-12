@@ -33,6 +33,7 @@ const LoginPage = () => {
          if (data) {
               toast.success("Login Successful");
           
+                router.refresh();
               setTimeout(() => {
                 router.push("/");
                  }, 1000);
