@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 import { auth } from "./lib/auth";
 import { headers } from "next/headers";
 
-export async function proxy(request) {
+export async function middleware(request) {
      const session = await auth.api.getSession({
-        headers: await headers()
+        headers: request.headers()
     })
 
    if(session){
@@ -18,5 +18,5 @@ export async function proxy(request) {
 }
 
 export const config = {
-  matcher: ["/profile", "/allcourse/:path"],
+  matcher: ["/profile", "/allcourse/:path*"],
 }
