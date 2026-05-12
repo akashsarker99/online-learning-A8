@@ -13,20 +13,19 @@ const ProfilePage = () => {
             <div className=' p-10 flex flex-col sm:flex-row gap-4 justify-around'>
                <div> 
                  <h2 className='font-bold'>Name:</h2>
-                <h2>{user.name}</h2>
+                <h2>{user?.name}</h2>
 
                 <h2 className='mt-3 font-bold'>Email:</h2>
-                <h2>{user.email}</h2>
+                <h2>{user?.email}</h2>
                </div>
 
                <div>
                 <h2 className='font-bold'>Photo URL</h2>
-                <p>{user.image}</p>
+                <p>{user?.image}</p>
 
                 <h2 className='mt-3 font-bold'>ID:</h2>
-                <h2>{user.id}</h2>
+                <h2>{user?.id}</h2>
                </div>
-
                
             </div>
 
