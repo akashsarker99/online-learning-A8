@@ -2,7 +2,7 @@
 A modern online learning platform where users can explore courses, watch lessons, and enroll in skill-based programs like Web Development, Design, Marketing, and more.
 
 ## Live Website
-https://online-learning-a8-pl5q.vercel.app/
+https://online-learning-a8.vercel.app
 
 
 ## Project Purpose
