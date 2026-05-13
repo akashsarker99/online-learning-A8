@@ -1,10 +1,20 @@
 import { getCourses } from "@/lib/getfiles";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 const CourseDetails = async ({params}) => {
     const {id} = await params;
    const courses = await getCourses();
+    const session = await auth.api.getSession({
+        headers: await headers()
+    })
+
+   if(!session){
+     redirect('/login')
+   }
 
 const detailCard = courses.find(course => course.id == id);
 
