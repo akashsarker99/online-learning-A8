@@ -6,23 +6,12 @@ import React, { useEffect } from 'react';
 
 const ProfilePage = () => {
     const router = useRouter();
-    const {data: session, isPending} = authClient.useSession();
+    const {data: session} = authClient.useSession();
     const user = session?.user;
-   useEffect(() => {
-
-    if (!isPending && !session) {
+    if (!session) {
       router.push("/login");
     }
 
-  }, [session, isPending, router]);
-
-  if(isPending){
-     return (
-        <div  className='flex justify-center items-center h-[80vh]'>
-           <span className="loading loading-ring loading-xl"></span>
-        </div>
-    );
-  }
     return (
         <div className='text-center mt-9 container mx-auto'>
             <h1 className='text-2xl font-bold mb-6 underline'>My Profile</h1>
